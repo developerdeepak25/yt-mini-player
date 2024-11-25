@@ -20,10 +20,11 @@ const VideoPlayer = ({ videoUrl, videoRef }: videoType) => {
       // key={111}
       ref={videoRef}
       src={videoUrl}
-      className="w-full h-full object-contain"
+      className="h-full object-contain"
       onClick={handlePlayPause}
       controls={true}
       autoPlay
+    
     />
   );
 };

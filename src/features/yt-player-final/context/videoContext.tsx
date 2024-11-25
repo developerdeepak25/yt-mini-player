@@ -36,52 +36,48 @@ const videoList = [
   {
     id: "1a2b3c",
     title: "Inspirational Highlights",
-    path: "/6959285-sd_640_360_25fps.mp4",
+    path: "/v1.mp4",
   },
   {
     id: "2d3e4f",
     title: "Adventure Moments",
-    path: "/7346214-sd_720_540_25fps.mp4",
+    path: "/v5.mp4",
   },
   {
     id: "3g4h5i",
     title: "City Walkthrough",
-    path: "/12488488_640_360_30fps.mp4",
+    path: "/v4.mp4",
   },
   {
     id: "4j5k6l",
     title: "Documentary Preview",
-    path: "/18921613-sd_640_360_30fps.mp4",
+    path: "/v2.mp4",
   },
-  // {
-  //   id: "5m6n7o",
-  //   title: "Screen Recording",
-  //   path: "/screen-capture-_4.mp4",
-  // },
+  
   {
     id: "6p7q8r",
     title: "Project Recap",
-    path: "/Untitled video - Made with Clipchamp.mp4",
+    path: "/v6.mp4",
   },
   {
     id: "7s8t9u",
     title: "Daily Vlog Highlights",
-    path: "/12488488_640_360_30fps.mp4",
+    path: "/v4.mp4",
   },
   {
     id: "8v9w0x",
     title: "Nature Clips",
-    path: "/6959285-sd_640_360_25fps.mp4",
+    path: "/v1.mp4",
   },
   {
     id: "5m6n7o",
     title: "Nature Clip",
-    path: "/6959285-sd_640_360_25fps.mp4",
+    path: "/v3.mp4",
   },
   {
     id: "9y0z1a",
     title: "Tech Demo",
-    path: "/18921613-sd_640_360_30fps.mp4",
+    path: "/v2.mp4",
   },
 ];
 
@@ -96,11 +92,7 @@ export const VideoProvider: React.FC<VideoProviderProps> = ({ children }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const portalNode = useRef(createHtmlPortalNode());
   const [videoId, setVideoId] = useState<string>("");
-  // const [currentVideo, setCurrentVideo] = useState<videoType | null>(null);
-
-  //   const updateState = (newState: StateType) => {
-  //     setIsMinimized(newState);
-  //   };
+  
   const currnetVideo  = videoId ? videos.find((video) => video.id === videoId): undefined;
 
   return (

@@ -31,9 +31,10 @@ const Home = () => {
   }, [setIsMinimized, videoRef]);
   // console.log(portalNode.current);
 
-  useEffect(() => {
-    console.log(`isMinimized`, isMinimized);
-  }, [isMinimized]);
+  // useEffect(() => {
+    // portalNode.current.height = "100%";
+    // console.log(`isMinimized`, isMinimized);
+  // }, [portalNode]);
 
   return (
     <>
@@ -44,7 +45,7 @@ const Home = () => {
           // ref={miniContainerRef}
           className={`
           fixed bottom-4 right-4 w-80 h-44 bg-black shadow-lg rounded-lg overflow-hidden
-          transition-all duration-200 ease-in-out
+          transition-all duration-200 ease-in-out flex  justify-center 
           ${
             isMinimized
               ? "opacity-100 transform translate-y-0 pointer-events-auto"
@@ -52,16 +53,8 @@ const Home = () => {
           }
           `}
         >
-          {/* {playerState === "mini" && <OutPortal node={portalNode.current} />} */}
-          {/* <video
-          // key={111}
-          // ref={videoRef}
-          // src={videoUrl}
-          className="w-full h-full object-contain"
-          // onClick={handlePlayPause}
-          controls={true}
-        /> */}
-          {isMinimized && <OutPortal node={portalNode.current} />}
+
+          {isMinimized && <OutPortal node={portalNode.current}  />}
 
           <div
             className="absolute top-0 right-0 flex gap-1 p-2 
@@ -82,7 +75,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <InPortal node={portalNode.current}>
+      <InPortal node={portalNode.current} >
         <VideoPlayer videoRef={videoRef} videoUrl={currnetVideo?.path || ""} />
       </InPortal>
     </>
